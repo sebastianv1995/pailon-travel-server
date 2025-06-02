@@ -1,0 +1,56 @@
+{
+  "name": "PailonTravel Server",
+  "description": "Strapi CMS for PailonTravel application",
+  "keywords": ["strapi", "cms", "api", "travel"],
+  "website": "https://strapi.io/",
+  "repository": "https://github.com/strapi/strapi",
+  "logo": "https://strapi.io/assets/images/logo.png",
+  "success_url": "/admin",
+  "env": {
+    "APP_KEYS": {
+      "description": "App Keys for sessions",
+      "generator": "secret"
+    },
+    "API_TOKEN_SALT": {
+      "description": "Salt for API tokens",
+      "generator": "secret"
+    },
+    "ADMIN_JWT_SECRET": {
+      "description": "Secret for admin JWT tokens",
+      "generator": "secret"
+    },
+    "TRANSFER_TOKEN_SALT": {
+      "description": "Salt for transfer tokens",
+      "generator": "secret"
+    },
+    "JWT_SECRET": {
+      "description": "Secret for JWT tokens",
+      "generator": "secret"
+    },
+    "BASE_URL": {
+      "description": "Base URL of your Heroku app",
+      "value": "https://your-app-name.herokuapp.com"
+    },
+    "NODE_ENV": {
+      "description": "Environment",
+      "value": "production"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:essential-0"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-22"
+}
