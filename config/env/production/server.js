@@ -9,4 +9,12 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
+  // ✅ AGREGAR CONFIGURACIÓN DE CORS
+  settings: {
+    cors: {
+      enabled: true,
+      headers: '*',
+      origin: ['*'] // O específicamente tu app: ['https://tu-app.com', 'exp://tu-ip:puerto']
+    },
+  },
 });
